@@ -142,9 +142,21 @@ The x402 protocol represents the crypto-native approach to agent payments. By em
 
 Both card networks have recognized that agent-initiated payments represent a new transaction category requiring new infrastructure. Visa's Trusted Agent Protocol provides merchant-side verification of authorized agents, while Mastercard's Agentic Token framework extends mobile-payment tokenization to agent contexts. Both are positioning as trust layers that sit beneath any of the higher-level protocols (MPP, ACP, UCP) [[5]](#ref5) [[6]](#ref6).
 
-### 4.9 Replit — Developer-Facing Agents
+### 4.9 Replit — Developer-Facing Agents (Agent 4)
 
-Replit's Agent 3 (launched September 2025) represents the developer-tools angle of agentic commerce. While not a payment protocol, Replit agents can autonomously build, deploy, and integrate e-commerce applications — including connecting to Stripe for payment processing. Replit went from $10M to $100M ARR in 9 months after launching Agent, raised $250M at a $3B valuation in January 2026, and supports custom MCP servers for external tool integration [[11]](#ref11).
+Replit has become one of the most consequential platforms in agentic commerce infrastructure. Its progression from Replit Agent (September 2025) to **Agent 4** (March 2026) represents a step-change in capability and commercial traction.
+
+**Business trajectory:** Replit scaled from $10M to $100M ARR in 9 months on the back of Agent. In March 2026, it closed a **$400M Series D at a $9B valuation** — a 3× increase from its January 2026 valuation of $3B — led by Georgian Partners with participation from Databricks Ventures, Okta Ventures, a16z, Coatue, Y Combinator, and others. The company now serves 40M+ users and has penetration in 85% of the Fortune 500 [[11]](#ref11) [[11b]](#ref11b).
+
+**Agent 4 capabilities:** Released March 2026, Agent 4 meaningfully expands Replit's agentic commerce surface area:
+- **MCP-native tool integration:** Agent 4 ships with native integrations to BigQuery, Linear, Slack, Notion, and external commerce APIs via Model Context Protocol
+- **Parallel task execution:** Agents can now run concurrent sub-tasks — for commerce applications, this means handling product catalog updates, payment flow testing, and API integration verification in a single session
+- **Real-time collaboration:** Human-in-the-loop oversight during autonomous builds reduces error rates in production deployments
+- **Stripe and payment API wiring:** Replit agents can autonomously scaffold, configure, and test Stripe Billing, Checkout, and Connect integrations — compressing what previously took a junior engineer days into minutes
+
+**Agent commerce role:** Replit's platform sits at the intersection of *agent tooling* and *agentic commerce execution*. Developers use Replit agents to build commerce infrastructure (storefronts, payment flows, billing engines); enterprises use it to autonomously maintain and extend existing commerce systems. As agents become capable of writing and deploying complete commerce stacks, Replit's platform effectively industrializes agent-driven software commerce.
+
+**Strategic position:** At $9B, Replit is priced as a platform — not a developer tool. The comparison case is Salesforce AppExchange: if Replit becomes the deployment surface for agent-built commerce applications, the long-term revenue opportunity is commission on the commerce that flows through those deployments, not just subscription SaaS.
 
 ### 4.10 Emerging Startups
 
@@ -167,7 +179,7 @@ Replit's Agent 3 (launched September 2025) represents the developer-tools angle 
 | **Coinbase / Cloudflare** | x402 | HTTP 402 + USDC; on-chain settlement (Base, Solana) | Zero protocol fees; ecosystem play | GA (May 2025) | Micropayments, API monetization, pay-per-request | Open |
 | **Visa** | Trusted Agent Protocol | Cryptographic agent verification; card-network settlement | Network interchange fees | Beta / Early GA | Agent identity verification, fraud prevention | Consortium |
 | **Mastercard** | Agentic Token Framework | Dynamic tokenization; purchase-intent metadata | Network interchange fees | Beta | Tokenized agent payments, merchant verification | Consortium |
-| **Replit** | Agent 3 | Autonomous coding agent; MCP integration; Stripe connect | Subscription + credits | GA (Sept 2025) | App building, e-commerce site creation, integrations | Closed (MCP support) |
+| **Replit** | Agent 4 (March 2026) | Autonomous coding agent; MCP-native (BigQuery, Slack, Notion, Stripe); parallel task execution; human-in-the-loop | Subscription + credits; $9B valuation (Series D, $400M, March 2026) | GA | App building, e-commerce scaffolding, payment flow automation, API integration | Closed (MCP open) |
 
 ---
 
@@ -399,6 +411,8 @@ Four major protocols (MPP, ACP, UCP, x402) are live simultaneously. Will the mar
 ---
 
 ## Changelog
+
+- **March 31, 2026:** Updated §4.9 (Replit) with Agent 4 launch details, $400M Series D at $9B valuation, MCP-native integrations, parallel task execution, 40M users, 85% Fortune 500 penetration. Updated comparison table row.
 
 | Date | Change |
 |---|---|
