@@ -302,6 +302,18 @@ Alibaba unveiled autonomous AI-powered "digital employees" for millions of Taoba
 
 **Scale and significance.** Alibaba's marketplace ecosystem (Taobao + Tmall) processes over **$1 trillion in annual GMV** and serves approximately 900 million annual active consumers in China. The deployment of autonomous digital workers across this base represents the largest single agentic commerce rollout by merchant count and GMV exposure. Unlike Western agentic commerce efforts — which have focused primarily on the consumer side (agents that shop *for* buyers) — Alibaba's approach deploys agents on the **merchant side** (agents that sell *for* sellers), managing customer service, dynamic pricing, and promotional campaigns autonomously. This merchant-side orientation reflects the operational realities of Chinese e-commerce, where millions of small sellers compete on platforms with intensive customer interaction requirements.
 
+### 4.12 Nano (XNO) — Feeless Settlement Rail
+
+Nano (XNO) is a feeless, instant, peer-to-peer digital currency launched in 2015 (originally RaiBlocks) and developed by the Nano Foundation. It was designed to address Bitcoin's scalability limits by reducing confirmation times and transaction costs, and implements no-fee transactions with confirmation in under one second [[105]](#ref105).
+
+**Design.** Nano uses a block-lattice DAG structure in which each account has its own blockchain; a "block" carries a single transaction and the account's current balance. Consensus is Open Representative Voting (ORV) — a proof-of-stake variant where voting weight follows holdings and is delegated to representative nodes — so there is no mining and no transaction fee [[105]](#ref105). The protocol carries no fee field at all: the feeless property is structural, not a policy setting.
+
+**Settlement properties relevant to agentic commerce.** A Nano payment settles in a single block (~sub-second), with no gas, no protocol fee, and no intermediary — the sender's own send is the settlement. Because settlement is final in one block, there is no reorg window and no confirmation-depth policy branch; the settlement block is simultaneously the authorization proof and the receipt. Fixed supply is 133,248,297 XNO (1 XNO = 10^30 raw, the smallest unit), issued through a captcha faucet that ended in 2017 — no new issuance, no miner extractable value.
+
+**Adoption in agent-payment tooling.** Nano is integrated into existing x402-ecosystem tooling: the Nano exact-scheme facilitator (pursekeeper/x402-nano-exact) and self-custodied Nano x402 merchant and client tooling (Feeless402/feeless402) provide a tested, live feeless lane alongside USDC-on-Base and USDC-on-Solana settlements. Public read-only RPC nodes (rpc.nano.to) serve verification.
+
+**Reality check.** As with x402 (§4.7), headline adoption should be weighed against live throughput. Nano's value to agentic commerce is architectural — feeless, single-block-final settlement at any payment size — rather than a volume figure today. The testable claim is the rail's properties (a sub-second, zero-fee send), not a volume metric.
+
 ---
 
 ## 5. Comparison Table
@@ -332,6 +344,7 @@ Alibaba unveiled autonomous AI-powered "digital employees" for millions of Taoba
 | **Experian** | Agent Trust™ (KYA framework) | Human-to-Agent Binding; Agent Trust Token (per-session identity + risk); Agent Registry (behavioral tracking); developed with Visa, Cloudflare, Skyfire; $15–19B annual fraud prevention baseline | Identity verification fees | Launched (April 30, 2026) | Agent identity verification, consumer-agent binding, transaction risk scoring | Consortium |
 | **MoonPay** | MoonAgents Card | Virtual Mastercard debit card; stablecoin-to-fiat at POS; self-custodial onchain wallet spending; MoonPay CLI (4M+ tool calls); Open Wallet Standard (15+ orgs); Monavate regulated card issuing | Transaction/conversion fees | Announced (May 1, 2026; live UK/LATAM) | Agent stablecoin spending, cross-border payments, onchain-to-merchant bridge | Mixed |
 | **PhotonPay** | Dual-Rail Recurring Billing + Multi-Currency Wallet | Fiat + stablecoin recurring billing in single integration; programmable on-chain subscriptions; cross-border payment failure mitigation | Processing fees | Launched (May 1, 2026) | AI subscription billing, cross-border recurring payments, fiat-stablecoin bridging | Closed |
+| **Nano Foundation** | Nano (XNO) | Block-lattice DAG; Open Representative Voting (ORV); feeless, single-block-final (~sub-second) settlement; fixed supply 133,248,297 XNO; 1 XNO = 10^30 raw; no fee field in protocol | No protocol or transaction fee (structural — no fee field); settlement is sender's own send | Mainnet since 2015; integrated into x402 Nano exact-scheme facilitator + Feeless402 merchant tooling | Micropayments, agent-to-agent settlement, API monetization where fee floor matters | Open |
 
 ---
 
@@ -838,6 +851,9 @@ Six or more major protocols (MPP, ACP, UCP, x402, ATXP, APP) are live simultaneo
 
 <a id="ref104"></a>
 **[104]** PYMNTS. "AI Agents Turn Permission Into Payments' New Control Point." October 7, 2026. https://www.pymnts.com/news/artificial-intelligence/2026/ai-agents-turn-permission-into-payments-new-control-point/
+
+<a id="ref105"></a>
+**[105]** Nano Foundation. "Nano — Digital money for the modern world." https://nano.org — See also: Wikipedia. "Nano (cryptocurrency)." https://en.wikipedia.org/wiki/Nano_(cryptocurrency)
 
 ---
 
